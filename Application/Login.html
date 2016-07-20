@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+    <div ng-show="success" class="alert-success">Student Added ,  new count is :  {{TotalEmployee}}</div>
+    <div ng-show="error" class="alert-danger">There is some problem please try after sometime.</div>
+    <div class="container">
+        <div class="row col-md-8">
+            <table class="table table-fixed">
+                <tr>
+                    <td>EmployeeID:</td>
+                    <td>
+                        <input type="text" ng-model="Employee.ID" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td>Name:
+                    </td>
+                    <td>
+                        <input type="text" ng-model="Employee.FirstName" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address:
+                    </td>
+                    <td><input type="text" ng-model="Employee.LastName" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contact No:
+                    </td>
+                    <td>
+                        <input type="text" ng-model="Student.ContactNumber" class="form-control" />
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="row col-md-10">
+        <button type="button" ng-click="SaveEmployee(Employee)" class="btn btn-primary .btn-md">Save</button>
+        <button type="button" ng-click="" class="btn btn-danger .btn-md">Cancel</button>
+    </div>
+
+</body>
+</html>

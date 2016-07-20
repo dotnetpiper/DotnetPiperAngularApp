@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <h2>Movie Rating Portal</h2>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    
+   
+    <style>
+        .selected
+        {
+            background-color: lightyellow;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body ng-app="routingApp" class="jumbotron">
+    <div ng-controller="MovieController" class="container">
+
+        <div ng-show="success" class="alert-success">Record has been upddated for movie :  {{updatedMovie.title}}</div>
+         <div ng-show="clear" class="alert-success">Record has been deleted for movie :  {{updatedMovie.title}}</div>
+        <div class="row col-md-8">
+            <table class="table table-striped ">
+                <div>
+                    <!--<fusioncharts
+                        id="mychartcontainer"
+                        chartid="mychart"
+                        width="400"
+                        height="200"
+                        dataFormat= "json"
+                        type="column2d"
+                        datasource="{{mySource}}"></fusioncharts>-->
+                </div>
+                <thead class="thead-inverse">
+                    <th style="background-color: Highlight">Title</th>
+                    <th style="background-color: Highlight">Year of Release</th>
+                    <th style="background-color: Highlight">Rating</th>
+                    <th style="background-color: Highlight">Plot</th>
+                    <th style="background-color: Highlight">Actions</th>
+                </thead>
+                <tr>
+                    <!-- <td>EmployeeID:</td>-->
+                    <td>
+                        <input type="text" ng-model="movie.title" class="form-control" />
+
+                    </td>
+                    <td>
+                        <input type="text" ng-model="movie.year" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="text" ng-model="movie.rating" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="text" ng-model="movie.plot" class="form-control" />
+                    </td>
+                    <td>
+                        <button type="button" ng-click="AddMovie(movie)" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tbody>
+                    <tr ng-repeat="movie in movies" ng-class="{'selected':$index == selectedRow}">
+                        <td>{{movie.title}}
+                        </td>
+                        <td>{{movie.year}}
+                        </td>
+                        <td>{{movie.rating}}
+                        </td>
+                        <td>{{movie.plot }}
+                        </td>
+                        <td>
+                            <button type="button" ng-click="EditMovie(movie,$index)" class="btn btn-warning">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                            <button type="button" ng-click="DeleteMovie(movie,$index)" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

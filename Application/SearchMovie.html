@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <h2>Seach Movie Using IMDB API</h2>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+    <style>
+        .selected
+        {
+            background-color: lightyellow;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body ng-app="routingApp" class="jumbotron">
+    <div ng-controller="ApiMovieController" class="container">
+
+        <!--<div ng-show="success" class="alert-success">Record has been upddated for movie :  {{updatedMovie.title}}</div>
+         <div ng-show="clear" class="alert-success">Record has been deleted for movie :  {{updatedMovie.title}}</div>-->
+        <div class="row col-md-8">
+            <table class="table table-striped ">
+
+
+                <tr>
+                    <!-- <td>EmployeeID:</td>-->
+                    <!-- <td>
+                        <input type="text" ng-model="movie.title" class="form-control" />
+
+                    </td>
+                    <td>
+                        <input type="text" ng-model="movie.year" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="text" ng-model="movie.rating" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="text" ng-model="movie.plot" class="form-control" />
+                    </td>
+                    <td>
+                        <button type="button" ng-click="AddMovie(movie)" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </td>-->
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" ng-model="searchByTitle" class="form-control" style="width: 300px;" />
+                    </td>
+                    {{dateTime}}
+                    <td>
+                         <button type="button" ng-click="SearchMovieByTitle()" class="btn btn-info">Search using Angular Scope
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        <br />
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                         <button type="button" id="btnSearch" class="btn btn-info">Seacrh Movie Using EventListener
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr class="thead-inverse">
+                    <td style="background-color: Highlight">Title</td>
+                    <td style="background-color: Highlight">Year of Release</td>
+                    <td style="background-color: Highlight">Rating</td>
+                    <td style="background-color: Highlight">Plot</td>
+                    <td style="background-color: Highlight">Actions</td>
+                </tr>
+                <tbody>
+                    <tr ng-repeat="movie in movies" ng-class="{'selected':$index == selectedRow}">
+                        <td>{{movie.title}}
+                        </td>
+                        <td>{{movie.year}}
+                        </td>
+                        <td>{{movie.rating}}
+                        </td>
+                        <td>{{movie.plot }}
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

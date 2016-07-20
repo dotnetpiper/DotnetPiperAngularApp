@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index.cshtml";
+}
+
+<h2 class="display-4">Employee Details</h2>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<div class="container">
+    <div class="row col-md-8">
+       
+        <table ng-controller="DotnetPiperController" class="table table-fixed">
+            <thead>
+                <tr>
+                    <th class="col-xs-1" class="label label-default">ID</th>
+                    <th class="col-xs-2" class="label label-default">FirstName</th>
+                    <th class="col-xs-1" class="label label-primary">LastName</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in empList" class="info">
+                    <td>{{emp.ID}}</td>
+                    <td>{{emp.FirstName}}</td>
+                    <td>{{emp.LastName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
